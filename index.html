@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Amirhossein Nazari</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="bg" aria-hidden="true"></canvas>
+<main>
+  <header class="top">
+    <div class="brand">Amirhossein Nazari</div>
+    <nav aria-label="Main"><a href="#about">About</a><a href="#research">Research</a><a href="#projects">Projects</a><a href="#music">Music</a></nav>
+  </header>
+  <div class="views">
+    <section class="view active" id="about">
+      <h1>Hi, I’m Amirhossein Nazari.</h1>
+      <p>I'm a water resources engineer</p>
+      <a class="cta" href="#research">See my research</a>
+    </section>
+    <section class="view" id="research" aria-labelledby="h-research">
+      <h2 id="h-research">Research</h2>
+      <ul class="items">
+        <li class="item"><b>Paper title goes here</b><span>Authors · Journal · 2026 · <a href="#">PDF</a></span></li>
+        <li class="item"><b>Second paper title</b><span>Authors · Conference · 2025 · <a href="#">PDF</a></span></li>
+        <li class="item"><b>Third paper title</b><span>Authors · Journal · 2024 · <a href="#">PDF</a></span></li>
+      </ul>
+    </section>
+    <section class="view" id="projects" aria-labelledby="h-projects">
+      <h2 id="h-projects">Projects</h2>
+      <ul class="items">
+        <li class="item"><b>Project name</b><span>One line on what it does and what you built. <a href="#">View</a></span></li>
+        <li class="item"><b>Another project</b><span>One line on what it does and what you built. <a href="#">View</a></span></li>
+        <li class="item"><b>Third project</b><span>One line on what it does and what you built. <a href="#">View</a></span></li>
+      </ul>
+    </section>
+    <section class="view" id="music" aria-labelledby="h-music">
+      <h2 id="h-music">Music</h2>
+      <div id="tracks"></div>
+    </section>
+  </div>
+  <div class="legend">Lines: water flow paths · Nodes: data stations</div>
+</main>
+
+<aside id="wx" class="wx" aria-label="Local weather" aria-live="polite">
+  <div class="wx-head"><span class="wx-place">Locating…</span><button class="wx-loc" type="button">Use precise location</button></div>
+  <div class="wx-main"><span class="wx-temp">–</span><span class="wx-cond"></span></div>
+  <ul class="wx-list">
+    <li><span class="dot"></span><span>Rain</span><b class="wx-rain">–</b></li>
+    <li><span class="dot"></span><span>Storm</span><b class="wx-storm">–</b></li>
+    <li><span class="dot"></span><span>Flood</span><b class="wx-flood">–</b></li>
+  </ul>
+  <div class="wx-days"></div>
+</aside>
+
+<div class="player" role="group" aria-label="Music player">
+  <button id="play" class="pbtn" aria-label="Play music" aria-pressed="false">
+    <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path class="ic-play" d="M8 5v14l11-7z"/><path class="ic-pause" d="M7 5h4v14H7zM13 5h4v14h-4z"/></svg>
+  </button>
+  <span class="ptrack">My track<small></small></span>
+  <input id="vol" type="range" min="0" max="0.8" step="0.01" value="0.5" aria-label="Volume">
+  <button id="mot" class="mot" type="button" aria-pressed="true" aria-label="Toggle background motion">Motion</button>
+</div>
+
+
+<!-- libraries -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<!-- site scripts (order matters) -->
+<script src="scene.js"></script>
+<script src="tracks.js"></script>
+<script src="player.js"></script>
+<script src="router.js"></script>
+<script src="weather.js"></script>
+</body>
+</html>
